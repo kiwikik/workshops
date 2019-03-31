@@ -1,3 +1,6 @@
+config:
+    renderer: asciidoc
+
 modules:
   managing_users_overview:
     name: Managing Users Overview
