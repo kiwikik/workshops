@@ -1,0 +1,45 @@
+config:
+  vars:
+    - name: DEFAULT_PASSWORD
+      desc: Default password for users in the environment
+      value: openshift
+    - name: GIT_SERVER_URL
+      desc: Git server url
+      value: http://gogs-ocp-workshop.apps.rogers-6fff.openshiftworkshop.com
+    - name: CONSOLE_ADDRESS
+      desc: HTTP address of the OpenShift console
+      value: https://master.rogers-6fff.openshiftworkshop.com
+    - name: APPS_ADDRESS
+      desc: HTTP address suffix of apps deployed on OpenShift
+      value: apps.rogers-6fff.openshiftworkshop.com
+    - name: GET_STARTED_CLI_URL
+      desc: URL to documentation to configure CLI
+      value: https://docs.openshift.com/container-platform/latest/cli_reference/get_started_cli.html
+    - name: NEXUS_URL
+      desc: URL to Nexus repository
+      value: http://nexus-ocp-workshop.apps.rogers-6fff.openshiftworkshop.com
+    - name: REDHAT_DOWNLOAD_OC_PORTAL_URL
+      desc: URL for Red Hat portal oc binary download
+      value: https://mirror.openshift.com/pub/openshift-v3/clients/3.11.43/
+
+modules:
+  managing_users_overview:
+    name: Managing Users Overview
+  assigning_users_to_project_roles:
+    name: Assigning Users to Project Roles
+  creating_custom_roles:
+    name: Creating Custom Roles
+  assigning_limit_ranges_and_quotas:
+    name: Assigning Limit Ranges and Quotas
+  setting_up_default_limit_ranges_and_quotas_for_projects:
+    name: Setting up Default Limit Ranges and Quotas for Projects
+  limiting_number_of_self-provisioned_projects:
+    name: Limiting Number of Self-Provisioned Projects
+  deploying_metrics:
+    name: Deploying Metrics
+  aggr_logging:
+    name: Deploying Logging
+  idling_applications:
+    name: Idling Applications
+  removing_node:
+    name: Removing a node
