@@ -4,3 +4,21 @@ config:
 modules:
   managing_users_overview:
     name: Managing Users Overview
+  assigning_users_to_project_roles:
+    name: Assigning Users to Project Roles
+  creating_custom_roles:
+    name: Creating Custom Roles
+  assigning_limit_ranges_and_quotas:
+    name: Assigning Limit Ranges and Quotas
+  setting_up_default_limit_ranges_and_quotas_for_projects:
+    name: Setting up Default Limit Ranges and Quotas for Projects
+  limiting_number_of_self-provisioned_projects:
+    name: Limiting Number of Self-Provisioned Projects
+  deploying_metrics:
+    name: Deploying Metrics
+  aggr_logging:
+    name: Deploying Logging
+  idling_applications:
+    name: Idling Applications
+  removing_node:
+    name: Removing a node

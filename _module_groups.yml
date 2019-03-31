@@ -7,18 +7,27 @@ content:
 
 vars:
   DEFAULT_PASSWORD: "openshift"
-  GIT_SERVER_URL: "http://gogs-infra.apps.boston-c9ae.openshiftworkshop.com"
-  CONSOLE_ADDRESS: "https://master.boston-c9ae.openshiftworkshop.com"
-  APPS_ADDRESS: "apps.boston-c9ae.openshiftworkshop.com"
+  GIT_SERVER_URL: "http://gogs-ocp-workshop.apps.rogers-6fff.openshiftworkshop.com"
+  CONSOLE_ADDRESS: "https://master.rogers-6fff.openshiftworkshop.com"
+  APPS_ADDRESS: "apps.rogers-6fff.openshiftworkshop.com"
   GET_STARTED_CLI_URL: "https://docs.openshift.com/container-platform/latest/cli_reference/get_started_cli.html"
-  NEXUS_URL: "http://nexus.infra.svc.cluster.local:8081/repository/maven-public/"
-  REDHAT_DOWNLOAD_OC_PORTAL_URL: "https://access.redhat.com/downloads/content/290"
-  TERMINAL_URL: "https://terminal-infra.apps.boston-c9ae.openshiftworkshop.com"
-  ETHERPAD_USERS_LIST: "http://etherpad-infra.apps.boston-c9ae.openshiftworkshop.com/p/users"
+  NEXUS_URL: "http://nexus-ocp-workshop.apps.rogers-6fff.openshiftworkshop.com"
+  REDHAT_DOWNLOAD_OC_PORTAL_URL: "https://mirror.openshift.com/pub/openshift-v3/clients/3.11.43/"
+  TERMINAL_URL: "https://terminal-infra.apps.rogers-6fff.openshiftworkshop.com"
+  ETHERPAD_USERS_LIST: "http://etherpad-infra.apps.rogers-6fff.openshiftworkshop.com/p/users"
   JAVA_APP: true
 
 
 modules:
   activate:
   - managing_users_overview
+  - assigning_users_to_project_roles
+  - creating_custom_roles
+  - assigning_limit_ranges_and_quotas
+  - setting_up_default_limit_ranges_and_quotas_for_projects
+  - limiting_number_of_self-provisioned_projects
+  - deploying_metrics
+  - aggr_logging
+  - idling_applications
+  - removing_node
 
