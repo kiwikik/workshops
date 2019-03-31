@@ -23,5 +23,5 @@ config:
       value: https://mirror.openshift.com/pub/openshift-v3/clients/3.11.43/
 
 modules:
-  managing_users_overview.md:
+  managing_users_overview:
     name: Managing Users Overview
