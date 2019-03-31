@@ -23,23 +23,23 @@ config:
       value: https://mirror.openshift.com/pub/openshift-v3/clients/3.11.43/
 
 modules:
-  managing_users_overview:
+  managing_users_overview.md:
     name: Managing Users Overview
-  assigning_users_to_project_roles:
+  assigning_users_to_project_roles.md:
     name: Assigning Users to Project Roles
-  creating_custom_roles:
+  creating_custom_roles.md:
     name: Creating Custom Roles
-  assigning_limit_ranges_and_quotas:
+  assigning_limit_ranges_and_quotas.md:
     name: Assigning Limit Ranges and Quotas
-  setting_up_default_limit_ranges_and_quotas_for_projects:
+  setting_up_default_limit_ranges_and_quotas_for_projects.md:
     name: Setting up Default Limit Ranges and Quotas for Projects
-  limiting_number_of_self-provisioned_projects:
+  limiting_number_of_self-provisioned_projects.md:
     name: Limiting Number of Self-Provisioned Projects
-  deploying_metrics:
+  deploying_metrics.md:
     name: Deploying Metrics
-  aggr_logging:
+  aggr_logging.md:
     name: Deploying Logging
-  idling_applications:
+  idling_applications.md:
     name: Idling Applications
-  removing_node:
+  removing_node.md:
     name: Removing a node
