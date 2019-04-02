@@ -48,47 +48,48 @@ the `-` before the `apiVersion: "v1"`. Be careful about the indentation.
 
 ....
 cat -b my-project-template.yaml | tail -41
-    74  - apiVersion: "v1"
-    75    kind: "LimitRange"
-    76    metadata:
-    77      name: "${PROJECT_NAME}-limits"
-    78    spec:
-    79      limits:
-    80        - type: "Pod"
-    81          max:
-    82            cpu: "2"
-    83            memory: "1Gi"
-    84          min:
-    85            cpu: "200m"
-    86            memory: "6Mi"
-    87        - type: "Container"
-    88          max:
-    89            cpu: "2"
-    90            memory: "1Gi"
-    91          min:
-    92            cpu: "100m"
-    93            memory: "4Mi"
-    94          default:
-    95            cpu: "300m"
-    96            memory: "200Mi"
-    97          defaultRequest:
-    98            cpu: "200m"
-    99            memory: "100Mi"
-   100          maxLimitRequestRatio:
-   101            cpu: "10"
-   102  - apiVersion: v1
-   103    kind: ResourceQuota
-   104    metadata:
-   105      name: "${PROJECT_NAME}-quota"
-   106    spec:
-   107      hard:
-   108        pods: "4"
-   109  parameters:
-   110  - name: PROJECT_NAME
-   111  - name: PROJECT_DISPLAYNAME
-   112  - name: PROJECT_DESCRIPTION
-   113  - name: PROJECT_ADMIN_USER
-   114  - name: PROJECT_REQUESTING_USER
+
+- apiVersion: "v1"
+  kind: "LimitRange"
+  metadata:
+    name: "${PROJECT_NAME}-limits"
+  spec:
+    limits:
+      - type: "Pod"
+        max:
+          cpu: "2"
+          memory: "1Gi"
+        min:
+          cpu: "200m"
+          memory: "6Mi"
+      - type: "Container"
+        max:
+          cpu: "2"
+          memory: "1Gi"
+        min:
+          cpu: "100m"
+          memory: "4Mi"
+        default:
+          cpu: "300m"
+          memory: "200Mi"
+        defaultRequest:
+          cpu: "200m"
+          memory: "100Mi"
+        maxLimitRequestRatio:
+          cpu: "10"
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+      name: "${PROJECT_NAME}-quota"
+  spec:
+      hard:
+        pods: "4"
+parameters:
+- name: PROJECT_NAME
+- name: PROJECT_DISPLAYNAME
+- name: PROJECT_DESCRIPTION
+- name: PROJECT_ADMIN_USER
+- name: PROJECT_REQUESTING_USER
 ....
 
 Note I used `"${PROJECT_NAME}-limits"` and `"${PROJECT_NAME}-quota"` for
@@ -142,16 +143,18 @@ projectConfig:
   securityAllocator:
 ....
 
-Restart the `atomic-openshift-master` service
+Restart the `atomic-openshift-node` service
 
 ....
-systemctl restart atomic-openshift-master-api atomic-openshift-master-controllers
+$ /usr/local/bin/master-restart api
+$ /usr/local/bin/master-restart controller
+$ systemctl restart atomic-openshift-node.service
 ....
 
 Verify that it is running
 
 ....
-# systemctl status atomic-openshift-master-api
+# systemctl restart atomic-openshift-node.service
 ● atomic-openshift-master-api.service - Atomic OpenShift Master API
    Loaded: loaded (/usr/lib/systemd/system/atomic-openshift-master-api.service; enabled; vendor preset: disabled)
    Active: active (running) since Mon 2018-02-05 17:19:43 UTC; 7min ago
@@ -175,26 +178,24 @@ Hint: Some lines were ellipsized, use -l to show in full.
 
 
 # systemctl status atomic-openshift-master-controllers
-● atomic-openshift-master-controllers.service - Atomic OpenShift Master Controllers
-   Loaded: loaded (/usr/lib/systemd/system/atomic-openshift-master-controllers.service; enabled; vendor preset: disabled)
-   Active: active (running) since Mon 2018-02-05 17:21:14 UTC; 6min ago
+● atomic-openshift-node.service - OpenShift Node
+   Loaded: loaded (/etc/systemd/system/atomic-openshift-node.service; enabled; vendor preset: disabled)
+   Active: active (running) since Tue 2019-04-02 00:17:30 UTC; 4s ago
      Docs: https://github.com/openshift/origin
- Main PID: 26777 (openshift)
-   Memory: 119.4M
-   CGroup: /system.slice/atomic-openshift-master-controllers.service
-           └─26777 /usr/bin/openshift start master controllers --config=/etc/origin/master/master-config.yaml --loglevel=2 --listen=https://0.0.0.0:8444
+ Main PID: 55923 (hyperkube)
+   CGroup: /system.slice/atomic-openshift-node.service
+           └─55923 /usr/bin/hyperkube kubelet --v=2 --address=0.0.0.0 --allow-privileged=true --anonymous-auth=true --aut...
 
-Feb 05 17:24:16 u01-master atomic-openshift-master-controllers[26777]: I0205 17:24:16.451707   26777 replication_controller.go:451] Too few "limits-quotas"/"welcome-...eating 1
-Feb 05 17:24:16 u01-master atomic-openshift-master-controllers[26777]: I0205 17:24:16.463356   26777 replication_controller.go:479] Failed creation, decrementing exp...imits-1"
-Feb 05 17:24:16 u01-master atomic-openshift-master-controllers[26777]: E0205 17:24:16.463396   26777 replication_controller.go:482] unable to create pods: pods "welc...: pods=4
-Feb 05 17:24:16 u01-master atomic-openshift-master-controllers[26777]: E0205 17:24:16.463459   26777 replication_controller.go:422] unable to create pods: pods "welc...: pods=4
-Feb 05 17:24:16 u01-master atomic-openshift-master-controllers[26777]: I0205 17:24:16.463768   26777 event.go:218] Event(v1.ObjectReference{Kind:"ReplicationController", Nam...
-Feb 05 17:27:00 u01-master atomic-openshift-master-controllers[26777]: I0205 17:27:00.303784   26777 replication_controller.go:451] Too few "limits-quotas"/"welcome-...eating 1
-Feb 05 17:27:00 u01-master atomic-openshift-master-controllers[26777]: I0205 17:27:00.315512   26777 replication_controller.go:479] Failed creation, decrementing exp...imits-1"
-Feb 05 17:27:00 u01-master atomic-openshift-master-controllers[26777]: E0205 17:27:00.315530   26777 replication_controller.go:482] unable to create pods: pods "welc...: pods=4
-Feb 05 17:27:00 u01-master atomic-openshift-master-controllers[26777]: E0205 17:27:00.315624   26777 replication_controller.go:422] unable to create pods: pods "welc...: pods=4
-Feb 05 17:27:00 u01-master atomic-openshift-master-controllers[26777]: I0205 17:27:00.315635   26777 event.go:218] Event(v1.ObjectReference{Kind:"ReplicationController", Nam...
-Hint: Some lines were ellipsized, use -l to show in full.
+Apr 02 00:17:32 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:32.846481   55923 operation_gene...")
+Apr 02 00:17:33 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:33.152413   55923 operation_genera...
+Apr 02 00:17:33 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:33.246662   55923 operation_gene...")
+Apr 02 00:17:33 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:33.446633   55923 operation_genera...
+Apr 02 00:17:33 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:33.646671   55923 operation_gene...")
+Apr 02 00:17:33 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:33.847296   55923 operation_gene...")
+Apr 02 00:17:34 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:34.046824   55923 operation_gene...")
+Apr 02 00:17:34 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:34.246819   55923 operation_gene...")
+Apr 02 00:17:34 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:34.446509   55923 operation_gene...")
+Apr 02 00:17:34 master1.rogers-6fff.internal atomic-openshift-node[55923]: I0402 00:17:34.646564   55923 operation_gene...")
 ....
 
 === Step 3

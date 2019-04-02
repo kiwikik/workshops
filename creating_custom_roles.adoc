@@ -34,7 +34,7 @@ being able to rsh'', the role `edit` is a good canidate.
 Export this role
 
 ....
-oc export clusterrole edit > edit_role.yaml
+oc get clusterrole edit -o yaml > edit_role.yaml
 ....
 
 If you take a look at this file, you will see the following resource

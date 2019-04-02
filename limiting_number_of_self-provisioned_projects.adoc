@@ -31,11 +31,11 @@ admissionConfig:
         - selector:
             level: advanced 
           maxProjects: 10
-        - maxProjects: 5 
+        - maxProjects: 6 
     BuildDefaults:
 ....
 
-The above configuration sets a global limit of 5 projects per user while
+The above configuration sets a global limit of 6 projects per user while
 allowing 10 projects for users with a label of `level=advanced` and
 unlimited projects for users with a label of `level=admin`.
 
@@ -61,8 +61,8 @@ have not deleted any…it is okay if you did).
 
 image:images/3-projects.png[image]
 
-Try to create more than 5 projects (name them anything you wish)…you
-will see an error when you try to create more than 5 projects.
+Try to create more than 6 projects (name them anything you wish)…you
+will see an error when you try to create more than 6 projects.
 
 image:images/no-more-projects.png[image]
 
@@ -72,7 +72,7 @@ projects you create.
 === Step 3
 
 The user `user-1` has no label associated with it. This means that this
-user gets the default ``5'' max projects. You can take a look at the
+user gets the default ``6'' max projects. You can take a look at the
 lables with the following command
 
 ....

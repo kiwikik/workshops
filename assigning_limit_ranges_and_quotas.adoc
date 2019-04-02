@@ -51,11 +51,11 @@ click on it to go to the overview page.
 
 On the overview page; navigage to `Resources ~> Quota`
 
-image:images/nolimits-quotas.png[image]
+image:://images/nolimits-quotas.png[]
 
 It should show that there is no limits or quotas set.
 
-image:images/noquotalimits-overview.png[image]
+image:./images/noquotalimits-overview.png[image]
 
 This means that any application created in this namespace can use as
 much resource that is available (default behavior). Now on the
