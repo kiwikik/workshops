@@ -22,14 +22,14 @@ section of the documentation].
 In this lab we will be doing the most common requested role.
 
 ____
-``I do not want a user to be able to remote shell into their container''
+``I do not want a user to be able to remote shell into their container``
 ____
 
 === Step 1
 
 The easiest way to creating a custom role, is to find an existing role
 that closely matches what you want, and edit it. In the case of ``not
-being able to rsh'', the role `edit` is a good canidate.
+being able to rsh``, the role `edit` is a good candidate.
 
 Export this role
 
