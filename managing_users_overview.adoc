@@ -6,7 +6,7 @@ from the OpenShift platform.
 
 === Step 1
 
-OpenShift takes ``hands off'' approach in regaurds to users. That is,
+OpenShift takes ``hands off`` approach in regards to users. That is,
 OpenShift does not manage users directly. Instead it ``offloads'' the
 user administration to whatever mechanism you choose.
 
@@ -24,7 +24,7 @@ By default, openshift uses `htpasswd` and a ``flat file'' for
 authentication. Take a look at this configuration.
 
 ....
-grep -A9 identityProviders /etc/origin/master/master-config.yaml 
+grep -A9 identityProviders /etc/origin/master/master-config.yaml
   identityProviders:
   - challenge: true
     login: true
@@ -55,11 +55,11 @@ update the flat file.
 
 ....
 htpasswd /etc/openshift/openshift-passwd user1
-New password: 
-Re-type new password: 
+New password:
+Re-type new password:
 Adding password for user user1
 
-cat /etc/openshift/openshift-passwd 
+cat /etc/openshift/openshift-passwd
 demo:$apr1$tuMj6pjc$uHo8IoNUoK0mGx6omnI1l1
 user1:$apr1$dYwgH8a9$0IjfdOm2DsN7.LvdBRV6F0
 ....
@@ -82,7 +82,7 @@ Example
 oc login -u user1
 Authentication required for https://master.example.com:8443 (openshift)
 Username: user1
-Password: 
+Password:
 Login successful.
 
 You dont have any projects. You can try to create a new project, by running
@@ -112,7 +112,7 @@ remove/lock the user account in the backend authentication method. In
 this case, it is as easy as removing them from the file.
 
 ....
-sed -i '/^user1/d' /etc/openshift/openshift-passwd 
+sed -i '/^user1/d' /etc/openshift/openshift-passwd
 
 cat /etc/openshift/openshift-passwd
 demo:$apr1$tuMj6pjc$uHo8IoNUoK0mGx6omnI1l1
