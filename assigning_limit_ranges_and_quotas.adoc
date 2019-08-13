@@ -23,7 +23,7 @@ Depending what you do, there might be a caveat.
 will take affect to newly created resources. Current pods will not be
 affected until restart.
 
-For this exercise we will be going the ``brand new project'' route.
+For this exercise we will be going the ``brand new project`` route.
 Create this project called `limits-quotas`
 
 ....
@@ -116,8 +116,8 @@ Now create an application and see how it affects it.
 oc new-app redhatworkshops/welcome-php --name=welcome-limits -n limits-quotas
 --> Found Docker image 3e73433 (7 months old) from Docker Hub for "redhatworkshops/welcome-php"
 
-    chx/welcome-php-1:b68a2d86 
-    -------------------------- 
+    chx/welcome-php-1:b68a2d86
+    --------------------------
     Platform for building and running PHP 5.6 applications
 
     Tags: builder, php, php56, rh-php56
@@ -138,12 +138,12 @@ oc new-app redhatworkshops/welcome-php --name=welcome-limits -n limits-quotas
 If you naviate to the overview page; you should see the application up
 and running.
 
-image:images/apprunning-limits.png[image]
+image:apprunning-limits.png[image]
 
 Click on the blue circle (representing the pod), then click on the
 ``Metrics'' tab to see what is being consumed.
 
-image:images/consumed-limits.png[image]
+image:consumed-limits.png[image]
 
 === Quotas
 
@@ -178,13 +178,13 @@ resourcequota "pod-quota" created
 If you navigate to the quotas overview page, you should see the quotas
 have taken effect.
 
-image:images/quotas-set.png[image]
+image:quotas-set.png[image]
 
 Test this by trying to scale the app in the overview page. Do this by
 clicking the ▲ button by the blue circle. You should see a message about
 your quota being reached
 
-image:images/quota-reached.png[image]
+image:quota-reached.png[image]
 
 === Conclusion
 

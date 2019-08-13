@@ -11,7 +11,7 @@ to set quotas to all newly created projects.
 === Step 1
 
 OpenShift uses a default template that creates a project with the
-requested name, and assigns the requesting user to the ``admin'' role
+requested name, and assigns the requesting user to the ``admin`` role
 for that project. You can override this using the
 `projectRequestTemplate` configuration in the master config file.
 
@@ -107,7 +107,7 @@ template "project-request" created
 Make a note of the name of this project template
 
 ....
-grep -A3 "kind: Template" my-project-template.yaml 
+grep -A3 "kind: Template" my-project-template.yaml
 kind: Template
 metadata:
   creationTimestamp: null

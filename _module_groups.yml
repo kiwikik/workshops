@@ -28,6 +28,6 @@ modules:
   - limiting_number_of_self-provisioned_projects
   - deploying_metrics
   - aggr_logging
+  - exploring_cluster_console
   - idling_applications
   - removing_node
-

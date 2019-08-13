@@ -92,7 +92,7 @@ aggregationRule:                          <
 Load this into OpenShift
 
 ....
-oc create -f edit_no_rsh_role.yaml 
+oc create -f edit_no_rsh_role.yaml
 clusterrole "edit_no_rsh" created
 ....
 
@@ -110,7 +110,7 @@ role "edit_no_rsh" added: "user-1"
 Login to the webui and try and run terminal commands to test that it is
 working. You may have to deploy an application if a pod doesn’t exist.
 
-image:images/user1-norsh.png[image]
+image:user1-norsh.png[image]
 
 === Conclusion
 

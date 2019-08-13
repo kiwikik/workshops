@@ -18,6 +18,8 @@ modules:
     name: Deploying Metrics
   aggr_logging:
     name: Deploying Logging
+  exploring_cluster_console:
+    name: Exploring Cluster Console
   idling_applications:
     name: Idling Applications
   removing_node:
