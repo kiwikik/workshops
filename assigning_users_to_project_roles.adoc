@@ -12,8 +12,8 @@ using the `htpasswd` command
 
 ....
 # htpasswd /etc/openshift/openshift-passwd user-1
-New password: 
-Re-type new password: 
+New password:
+Re-type new password:
 Adding password for user user-1
 ....
 
@@ -43,8 +43,8 @@ Already on project "project1" on server "https://10.0.0.4:8443"
 # oc new-app redhatworkshops/welcome-php --name=welcome-php
 --> Found Docker image 3e73433 (7 months old) from Docker Hub for "redhatworkshops/welcome-php"
 
-    chx/welcome-php-1:b68a2d86 
-    -------------------------- 
+    chx/welcome-php-1:b68a2d86
+    --------------------------
     Platform for building and running PHP 5.6 applications
 
     Tags: builder, php, php56, rh-php56
@@ -65,7 +65,7 @@ Already on project "project1" on server "https://10.0.0.4:8443"
 Now, as `user-1`, login to the webui. You should be presented with a
 ``blank slate'' after you login i.e, you won’t see any projects.
 
-image:images/openshift-overview-user-1.png[image]
+image:openshift-overview-user-1.png[image]
 
 === Step 2
 
@@ -88,7 +88,7 @@ role "view" added: "user-1"
 Take a look at the webpage now; you should see the project ``project1''
 (feel free to click around).
 
-image:images/user-1-myproject.png[image]
+image:user-1-myproject.png[image]
 
 Once you have explored; go back to the overviewpage
 
@@ -100,7 +100,7 @@ appears on the project list
 role "view" removed: "user-1"
 ....
 
-image:images/user1-noview.png[image]
+image:user1-noview.png[image]
 
 === Step 3
 
@@ -116,7 +116,7 @@ If you view the project overview page; you can see that you can scale
 up/down the application (noted with the ▲ and ▼ symbols) now that you
 have ``edit'' privilages
 
-image:images/user-1-edit.png[image]
+image:user-1-edit.png[image]
 
 === Step 4
 
@@ -124,7 +124,7 @@ You have edit privlages for the project; but only an admin of a project
 can delete a project. If you try and delete the project, you will get
 the following error.
 
-image:images/user-1-nodelete.png[image]
+image:user-1-nodelete.png[image]
 
 Grant the ``admin'' role to the user
 
@@ -136,7 +136,7 @@ role "admin" added: "user-1"
 Go ahead and delete this project (which deletes ALL applications and
 resources under the project so *MAKE SURE THIS IS WHAT YOU WANT*).
 
-image:images/user1-yesdelete.png[image]
+image:user1-yesdelete.png[image]
 
 === Conclusion
 
