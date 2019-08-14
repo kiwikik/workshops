@@ -3,20 +3,19 @@ name: OpenShift Container Platform Workshop
 logo: OpenShift_Logo_Small.png
 
 content:
-  url: https://raw.githubusercontent.com/gnunn1/workshops/ascii-v.3.11
+  url: https://github.com/kiwikik/workshops/tree/ascii-v.3.11
 
 vars:
   DEFAULT_PASSWORD: "openshift"
-  GIT_SERVER_URL: "http://gogs-ocp-workshop.apps.rogers-6fff.openshiftworkshop.com"
-  CONSOLE_ADDRESS: "https://master.rogers-6fff.openshiftworkshop.com"
-  APPS_ADDRESS: "apps.rogers-6fff.openshiftworkshop.com"
+  GIT_SERVER_URL: "http://gogs-workshop-infra.apps.rogers-325a.openshiftworkshop.com/"
+  CONSOLE_ADDRESS: "https://master.rogers-325a.openshiftworkshop.com"
+  APPS_ADDRESS: "apps.rogers-325a.openshiftworkshop.com"
   GET_STARTED_CLI_URL: "https://docs.openshift.com/container-platform/latest/cli_reference/get_started_cli.html"
-  NEXUS_URL: "http://nexus-ocp-workshop.apps.rogers-6fff.openshiftworkshop.com"
-  REDHAT_DOWNLOAD_OC_PORTAL_URL: "https://mirror.openshift.com/pub/openshift-v3/clients/3.11.43/"
-  TERMINAL_URL: "https://terminal-infra.apps.rogers-6fff.openshiftworkshop.com"
-  ETHERPAD_USERS_LIST: "http://etherpad-infra.apps.rogers-6fff.openshiftworkshop.com/p/users"
+  NEXUS_URL: "http://nexus-workshop-infra.apps.rogers-325a.openshiftworkshop.com"
+  REDHAT_DOWNLOAD_OC_PORTAL_URL: "https://mirror.openshift.com/pub/openshift-v3/clients/3.11.104/"
+  TERMINAL_URL: "http://workshop-terminal-workshop-infra.apps.rogers-325a.openshiftworkshop.com"
+  ETHERPAD_USERS_LIST: "http://etherpad-infra.apps.rogers-325a.openshiftworkshop.com/p/users"
   JAVA_APP: true
-
 
 modules:
   activate:
