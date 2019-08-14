@@ -2,23 +2,31 @@ config:
     renderer: asciidoc
 
 modules:
+  setting_up_client_tools:
+    name: Setting Up Client Tools (Hands-On)
   managing_users_overview:
-    name: Managing Users Overview
+    name: Managing Users Overview (Demo)
   assigning_users_to_project_roles:
-    name: Assigning Users to Project Roles
+    name: Assigning Users to Project Roles (Hands-On)
   creating_custom_roles:
-    name: Creating Custom Roles
+    name: Creating Custom Roles (Demo)
   assigning_limit_ranges_and_quotas:
-    name: Assigning Limit Ranges and Quotas
+    name: Assigning Limit Ranges and Quotas (Hands-On)
   setting_up_default_limit_ranges_and_quotas_for_projects:
-    name: Setting up Default Limit Ranges and Quotas for Projects
+    name: Setting up Default Limit Ranges and Quotas for Projects (Demo)
   limiting_number_of_self-provisioned_projects:
-    name: Limiting Number of Self-Provisioned Projects
+    name: Limiting Number of Self-Provisioned Projects (Demo)
+  creating_persistent_volume_dynamic:
+    name: Creating Persistent Volume (Hands-On)
   deploying_metrics:
-    name: Deploying Metrics
+    name: Deploying Metrics (Discussion)
   aggr_logging:
-    name: Deploying Logging
+    name: Deploying Logging (Discussion)
+  oc_adm_top:
+    name: Using oc adm top (Hands-On)
+  exploring_cluster_console:
+    name: Exploring Cluster Console (Hands-On)
   idling_applications:
-    name: Idling Applications
+    name: Idling Applications (Hands-On)
   removing_node:
-    name: Removing a node
+    name: Removing a node (Discussion)

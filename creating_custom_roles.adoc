@@ -22,14 +22,14 @@ section of the documentation].
 In this lab we will be doing the most common requested role.
 
 ____
-``I do not want a user to be able to remote shell into their container''
+``I do not want a user to be able to remote shell into their container``
 ____
 
 === Step 1
 
 The easiest way to creating a custom role, is to find an existing role
 that closely matches what you want, and edit it. In the case of ``not
-being able to rsh'', the role `edit` is a good canidate.
+being able to rsh``, the role `edit` is a good candidate.
 
 Export this role
 
@@ -92,7 +92,7 @@ aggregationRule:                          <
 Load this into OpenShift
 
 ....
-oc create -f edit_no_rsh_role.yaml 
+oc create -f edit_no_rsh_role.yaml
 clusterrole "edit_no_rsh" created
 ....
 
@@ -110,7 +110,7 @@ role "edit_no_rsh" added: "user-1"
 Login to the webui and try and run terminal commands to test that it is
 working. You may have to deploy an application if a pod doesn’t exist.
 
-image:images/user1-norsh.png[image]
+image:user1-norsh.png[image]
 
 === Conclusion
 

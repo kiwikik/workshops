@@ -40,7 +40,7 @@ $ oc create -f metrics-storage-pvc.yaml
 persistentvolumeclaim "metrics-storage" created
 ....
 
-Wait for it to go from ``Pending'' to ``Bound''
+Wait for it to go from ``Pending`` to ``Bound''
 
 ....
 $ oc get pvc

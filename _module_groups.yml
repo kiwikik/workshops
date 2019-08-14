@@ -3,7 +3,7 @@ name: OpenShift Container Platform Workshop
 logo: OpenShift_Logo_Small.png
 
 content:
-  url: https://raw.githubusercontent.com/kiwikik/workshops/ascii-v.3.11
+  url: https://raw.githubusercontent.com/gnunn1/workshops/ascii-v.3.11
 
 vars:
   DEFAULT_PASSWORD: "openshift"
@@ -20,14 +20,17 @@ vars:
 
 modules:
   activate:
+  - setting_up_client_tools
   - managing_users_overview
   - assigning_users_to_project_roles
   - creating_custom_roles
   - assigning_limit_ranges_and_quotas
   - setting_up_default_limit_ranges_and_quotas_for_projects
   - limiting_number_of_self-provisioned_projects
+  - creating_persistent_volume_dynamic
   - deploying_metrics
   - aggr_logging
+  - oc_adm_top
+  - exploring_cluster_console
   - idling_applications
   - removing_node
-

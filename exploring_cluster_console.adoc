@@ -1,0 +1,38 @@
+== Exploring Cluster Console
+
+In this lab you will explore the OpenShift cluster console which is
+available to operators to assist with managing the cluster. The cluster
+console provides an operator centric view enabling the operator to view
+capacity at a glance, browse resources across projects and view monitoring
+information.
+
+=== Access the console
+
+To access the cluster console, please use the URL below. If the lab is being done
+with individual clusters you will have full rights to the console, please be careful
+with regards to making any changes. In the case of a shared cluster, the instructor
+will have added the cluster-reader role to your user account to enable browsing the console.
+
+https://console.{{APPS_ADDRESS}}
+
+One you login to the console, click Home > Status as per the screenshot below to view the dashboard. If
+you do not see the capacity meters, make sure the project selector is set to "all projects".
+
+image:console-status.png[image]
+
+Explore the console by clicking on the Workloads, Networking, Storage and Builds section. Notice the
+project selector at the top, use it to cycle through the various projects in the cluster.
+
+Next explore the monitoring section, OpenShift deploys a Prometheus/Grafana stack to enable cluster
+monitoring. Click on the Monitoring > Metrics link to view the prometheus console and login using the
+"Login to OpenShift" button. Explore the metrics that are available in the dropdown. Once that is done,
+try constructing a query.
+
+Here is an example query showing the container metrics for a specific pod in a specific namespace.
+
+sum(namespace_pod_name_container_name:container_cpu_usage_seconds_total:sum_rate{namespace="openshift-monitoring", pod_name="prometheus-k8s-0", container_name!="POD"}) by (container_name)
+
+Next click on the Dashboard link to view the Grafana console, once again login with your
+OpenShift credential. Browse the dashboards to understand the information that is presented.
+
+image:console-dashboard.png[image]

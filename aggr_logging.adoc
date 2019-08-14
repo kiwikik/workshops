@@ -41,7 +41,7 @@ $ oc create -f logging-storage-pvc.yaml
 persistentvolumeclaim "logging-storage" created
 ....
 
-Wait for it to go from ``Pending'' to ``Bound''
+Wait for it to go from ``Pending`` to ``Bound``
 
 ....
 $ oc get pvc
