@@ -6,28 +6,20 @@ within the OpenShift platform.
 
 === Step 1
 
-You will need to create a user (or if you are using LDAP, you can use an
-LDAP user). If you are using the default installation; create a user
-using the `htpasswd` command
-
-....
-# htpasswd /etc/openshift/openshift-passwd user-1
-New password:
-Re-type new password:
-Adding password for user user-1
-....
-
-Next, as an admin (or another user), create a project and an app within
+As an admin (or another user), create a project and an app within
 that project.
 
 ....
 # oc whoami
-system:admin
+userXX
 ....
 
+NOTE: When creating the project please replace the XX in projectXX with the
+number assigned to you by the instructor.
+
 ....
-# oc new-project project1
-Now using project "project1" on server "https://10.0.0.4:8443".
+# oc new-project projectXX
+Now using project "projectXX" on server "https://10.0.0.4:8443".
 
 You can add applications to this project with the 'new-app' command. For example, try:
 
@@ -37,8 +29,8 @@ to build a new example application in Ruby.
 ....
 
 ....
-# oc project project1
-Already on project "project1" on server "https://10.0.0.4:8443"
+# oc project projectXX
+Already on project "projectXX" on server "https://10.0.0.4:8443"
 
 # oc new-app redhatworkshops/welcome-php --name=welcome-php
 --> Found Docker image 3e73433 (7 months old) from Docker Hub for "redhatworkshops/welcome-php"
@@ -62,25 +54,25 @@ Already on project "project1" on server "https://10.0.0.4:8443"
     Run 'oc status' to view your app.
 ....
 
-Now, as `user-1`, login to the webui. You should be presented with a
+Now, as `user1XX`, login to the webui. You should be presented with a
 ``blank slate'' after you login i.e, you won’t see any projects.
 
 image:openshift-overview-user-1.png[image]
 
 === Step 2
 
-Now we will assign the user `user-1` to be able to view the project
-`project1`. We will do this with the `oc policy` command as the
-`system:admin` user.
+Now we will assign the user `user1XX` to be able to view the project
+`projectXX`. We will do this with the `oc policy` command as the
+project admin user.
 
 ....
 # oc whoami
-system:admin
+userXX
 ....
 
 ....
-# oc policy add-role-to-user view user-1 -n project1
-role "view" added: "user-1"
+# oc policy add-role-to-user view user1XX -n project1
+role "view" added: "user1XX"
 ....
 
 *NOTE:* Use `oc policy -h` to view all the options
@@ -92,24 +84,24 @@ image:user-1-myproject.png[image]
 
 Once you have explored; go back to the overviewpage
 
-Remove the ``view'' role and see the project ``project1'' no longer
+Remove the ``view'' role and see the project ``projectXX'' no longer
 appears on the project list
 
 ....
-# oc policy remove-role-from-user view user-1 -n project1
-role "view" removed: "user-1"
+# oc policy remove-role-from-user view user1XX -n project1
+role "view" removed: "user1XX"
 ....
 
 image:user1-noview.png[image]
 
 === Step 3
 
-Now you will grant the ``edit'' role to `user-1` (this supersedes any
+Now you will grant the ``edit'' role to `user1XX` (this supersedes any
 prior policy).
 
 ....
-# oc policy add-role-to-user edit user-1 -n project1
-role "edit" added: "user-1"
+# oc policy add-role-to-user edit user1XX -n project1
+role "edit" added: "user1XX"
 ....
 
 If you view the project overview page; you can see that you can scale
@@ -129,8 +121,8 @@ image:user-1-nodelete.png[image]
 Grant the ``admin'' role to the user
 
 ....
-# oc policy add-role-to-user admin user-1 -n project1
-role "admin" added: "user-1"
+# oc policy add-role-to-user admin user1XX -n project1
+role "admin" added: "user1XX"
 ....
 
 Go ahead and delete this project (which deletes ALL applications and
