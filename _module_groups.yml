@@ -27,7 +27,7 @@ modules:
   - assigning_limit_ranges_and_quotas
   - setting_up_default_limit_ranges_and_quotas_for_projects
   - limiting_number_of_self-provisioned_projects
-  - creating_persistent_volume_dynamic
+  - creating_persistent_volume_rhpds
   - deploying_metrics
   - aggr_logging
   - oc_adm_top

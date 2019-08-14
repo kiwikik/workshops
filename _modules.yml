@@ -11,12 +11,12 @@ modules:
   creating_custom_roles:
     name: Creating Custom Roles (Demo)
   assigning_limit_ranges_and_quotas:
-    name: Assigning Limit Ranges and Quotas (Hands-On)
+    name: Assigning Limit Ranges and Quotas (Demo)
   setting_up_default_limit_ranges_and_quotas_for_projects:
     name: Setting up Default Limit Ranges and Quotas for Projects (Demo)
   limiting_number_of_self-provisioned_projects:
     name: Limiting Number of Self-Provisioned Projects (Demo)
-  creating_persistent_volume_dynamic:
+  creating_persistent_volume_rhpds:
     name: Creating Persistent Volume (Hands-On)
   deploying_metrics:
     name: Deploying Metrics (Discussion)
