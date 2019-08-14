@@ -4,6 +4,11 @@ In this lab you will learn how to grant user access to different
 projects. This will get you familiar with how to enable colaboration
 within the OpenShift platform.
 
+We are going to use two users in this lab, the original userXX that you were
+assigned plus another user, user1XX. So if you were assigned 10 as your number,
+your original user is user10 and the extra lab user is user 110. If you were assigned
+5 as your number, your original user is user5 and the second user is user105.
+
 === Step 1
 
 As an admin (or another user), create a project and an app within
@@ -71,13 +76,13 @@ userXX
 ....
 
 ....
-# oc policy add-role-to-user view user1XX -n project1
+# oc policy add-role-to-user view user1XX -n projectXX
 role "view" added: "user1XX"
 ....
 
 *NOTE:* Use `oc policy -h` to view all the options
 
-Take a look at the webpage now; you should see the project ``project1''
+Take a look at the webpage now; you should see the project ``projectXX''
 (feel free to click around).
 
 image:user-1-myproject.png[image]
@@ -88,7 +93,7 @@ Remove the ``view'' role and see the project ``projectXX'' no longer
 appears on the project list
 
 ....
-# oc policy remove-role-from-user view user1XX -n project1
+# oc policy remove-role-from-user view user1XX -n projectXX
 role "view" removed: "user1XX"
 ....
 
@@ -100,7 +105,7 @@ Now you will grant the ``edit'' role to `user1XX` (this supersedes any
 prior policy).
 
 ....
-# oc policy add-role-to-user edit user1XX -n project1
+# oc policy add-role-to-user edit user1XX -n projectXX
 role "edit" added: "user1XX"
 ....
 
@@ -112,7 +117,7 @@ image:user-1-edit.png[image]
 
 === Step 4
 
-You have edit privlages for the project; but only an admin of a project
+You have edit privileges for the project; but only an admin of a project
 can delete a project. If you try and delete the project, you will get
 the following error.
 
@@ -121,7 +126,7 @@ image:user-1-nodelete.png[image]
 Grant the ``admin'' role to the user
 
 ....
-# oc policy add-role-to-user admin user1XX -n project1
+# oc policy add-role-to-user admin user1XX -n projectXX
 role "admin" added: "user1XX"
 ....
 
