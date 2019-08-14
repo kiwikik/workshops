@@ -3,11 +3,11 @@ name: OpenShift Container Platform Workshop
 logo: OpenShift_Logo_Small.png
 
 content:
-  url: https://github.com/kiwikik/workshops/tree/ascii-v.3.11
+  url: https://raw.githubusercontent.com/kiwikik/workshops/ascii-v.3.11
 
 vars:
   DEFAULT_PASSWORD: "openshift"
-  GIT_SERVER_URL: "http://gogs-workshop-infra.apps.rogers-325a.openshiftworkshop.com/"
+  GIT_SERVER_URL: "http://gogs-workshop-infra.apps.rogers-325a.openshiftworkshop.com"
   CONSOLE_ADDRESS: "https://master.rogers-325a.openshiftworkshop.com"
   APPS_ADDRESS: "apps.rogers-325a.openshiftworkshop.com"
   GET_STARTED_CLI_URL: "https://docs.openshift.com/container-platform/latest/cli_reference/get_started_cli.html"
