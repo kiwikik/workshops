@@ -42,8 +42,8 @@ to build a new example application in Ruby.
 Assign this to `userXXX`
 
 ....
-oc policy add-role-to-user admin user-1 -n limits-quotas
-role "admin" added: "user-1"
+oc policy add-role-to-user admin userXX -n limits-quotas-userXX
+role "admin" added: "userXX"
 ....
 
 ==== Step 2

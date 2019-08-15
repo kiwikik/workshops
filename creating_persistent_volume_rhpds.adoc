@@ -103,7 +103,7 @@ Here you need to enter the following:
 
 ----
 * Name: myclaim
-* Access Mode: Single User (RWO)
+* Access Mode: Shared Access (RWX)
 * Size: 1 GiB
 ----
 
