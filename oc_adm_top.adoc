@@ -7,9 +7,10 @@ command gives operations valuable insight into cluster capacity.
 === Step 1
 
 Ensure that you’re logged into the cluster with the cluster-admin
-cluster role.
+cluster role. Your instructor will give you this role prior to starting
+the lab.
 
-`# oc login -u system:admin`
+`# oc login -u userXX`
 
 === Step 2
 
