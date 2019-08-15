@@ -32,7 +32,7 @@ grep -A9 identityProviders /etc/origin/master/master-config.yaml
     name: htpasswd_auth
     provider:
       apiVersion: v1
-      file: /etc/openshift/openshift-passwd
+      file: /etc/origin/master/htpasswd
       kind: HTPasswdPasswordIdentityProvider
   masterCA: ca-bundle.crt
 ....
@@ -54,12 +54,12 @@ authentication system. In this case; we use the `htpasswd` command to
 update the flat file.
 
 ....
-htpasswd /etc/openshift/openshift-passwd user1
+htpasswd /etc/origin/master/htpasswd user1
 New password:
 Re-type new password:
 Adding password for user user1
 
-cat /etc/openshift/openshift-passwd
+cat /etc/origin/master/htpasswd
 demo:$apr1$tuMj6pjc$uHo8IoNUoK0mGx6omnI1l1
 user1:$apr1$dYwgH8a9$0IjfdOm2DsN7.LvdBRV6F0
 ....

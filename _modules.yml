@@ -16,7 +16,7 @@ modules:
     name: Setting up Default Limit Ranges and Quotas for Projects (Demo)
   limiting_number_of_self-provisioned_projects:
     name: Limiting Number of Self-Provisioned Projects (Demo)
-  creating_persistent_volume_dynamic:
+  creating_persistent_volume_rhpds:
     name: Creating Persistent Volume (Hands-On)
   deploying_metrics:
     name: Deploying Metrics (Discussion)

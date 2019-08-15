@@ -24,10 +24,12 @@ will take affect to newly created resources. Current pods will not be
 affected until restart.
 
 For this exercise we will be going the ``brand new project`` route.
-Create this project called `limits-quotas`
+Create a project called `limits-quotas-userXX` where XX is the username
+assigned to you by the instructor. A non-admin user was already created for you.
+The username is you username number plus a hundred. For example, if your username is user5 then your non-admin user will be user105. Your non-admin user will be refered to userXXX further in this lab.
 
 ....
-oc new-project limits-quotas
+oc new-project limits-quotas-userXX
 Now using project "limits-quotas" on server "https://master.example.com:8443".
 
 You can add applications to this project with the 'new-app' command. For example, try:
@@ -37,7 +39,7 @@ You can add applications to this project with the 'new-app' command. For example
 to build a new example application in Ruby.
 ....
 
-Assign this to `user-1`
+Assign this to `userXXX`
 
 ....
 oc policy add-role-to-user admin user-1 -n limits-quotas
